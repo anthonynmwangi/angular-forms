@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>User Settings</h2>
+    <form #form="ngForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" class="form-control" type="text" name="Name">
+        </div>
+        <div class="form-check form-group">
+            <input type="checkbox" class="form-check-input" id="emailOffers" name="emailOffers">
+            <label for="emailOffers" class="form-check-label">Email Special Offers</label>
+        </div>
+				<p>User Interface Style</p>
+				<div class="form-group">
+					<div class="form-check">
+							<input class="form-check-input" type="radio" name="interfaceStyle" id="lightInterface" value="light">
+							<label class="form-check-label" for="lightInterface">
+								Light
+							</label>
+					</div>
+					<div class="form-check">
+							<input class="form-check-input" type="radio" name="interfaceStyle" id="mediumInterface" value="medium">
+							<label class="form-check-label" for="mediumInterface">
+								Medium
+							</label>
+					</div>
+					<div class="form-check">
+							<input class="form-check-input" type="radio" name="interfaceStyle" id="darkInterface" value="dark" checked>
+							<label class="form-check-label" for="darkInterface">
+								Dark
+							</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="subscriptionType">Subscription Type</label>
+					<select id="subscriptionType" class="form-select form-control" aria-label="Default select example">
+						<option selected>Open this select menu</option>
+						<option value="1">Monthly</option>
+						<option value="2">Annually</option>
+						<option value="3">Lifetime</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="notes">Notes</label>
+					<textarea name="notes" id="notes" class="form-control" rows="3"></textarea>
+				</div>
+
+        <button class="btn btn-primary">Send</button>
+    </form>    
+</div>
