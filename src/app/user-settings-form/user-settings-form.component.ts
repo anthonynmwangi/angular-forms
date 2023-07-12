@@ -19,4 +19,8 @@ export class UserSettingsFormComponent {
 
   userSettings: UserSettings = { ...this.originalUserSettings };
 
+  onSubmit(form:NgForm){
+    console.log('Form status: ' + form.valid);
+    
+  }
 }

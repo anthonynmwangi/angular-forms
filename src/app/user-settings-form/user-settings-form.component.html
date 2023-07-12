@@ -1,10 +1,10 @@
 <div class="container">
     <h2>User Settings</h2>
-    <form #form="ngForm">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" class="form-control" type="text" name="Name" [(ngModel)]="userSettings.name" required #nameField="ngModel">
-            <div [hidden]="nameField.valid || nameField.untouched" class="alert alert-danger">Enter a name</div>
+            <input id="name" class="form-control" type="text" name="Name" [(ngModel)]="userSettings.name" required #nameField="ngModel" [class.field-error]="form.submitted && nameField.invalid">
+            <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">Enter a name</div>
         </div>
         <div class="form-check form-group">
             <input type="checkbox" class="form-check-input" id="emailOffers" name="emailOffers" [(ngModel)]="userSettings.emailOffers">
