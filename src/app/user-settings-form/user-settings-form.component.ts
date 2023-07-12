@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserSettings } from '../data/user-settings';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-user-settings-form',
@@ -19,8 +19,12 @@ export class UserSettingsFormComponent {
 
   userSettings: UserSettings = { ...this.originalUserSettings };
 
+  onBlur(field:NgModel){
+    console.log('On leaving ' + field.name + ' field is '+ field.value);
+    
+  }
+
   onSubmit(form:NgForm){
     console.log('Form status: ' + form.valid);
-    
   }
 }
